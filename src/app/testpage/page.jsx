@@ -113,33 +113,62 @@
 // };
 // export default testpage;
 
+// "use client";
+
+// import { useState } from "react";
+
+// const testpage = () => {
+//   const [isUser, setIsUser] = useState(false);
+
+//   return (
+//     <div>
+//       {isUser ? (
+//         <button
+//           onClick={() => {
+//             setIsUser(false);
+//           }}
+//         >
+//           log in
+//         </button>
+//       ) : (
+//         <button
+//           onClick={() => {
+//             setIsUser(true);
+//           }}
+//         >
+//           register
+//         </button>
+//       )}
+//     </div>
+//   );
+// };
+// export default testpage;
+
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const testpage = () => {
-  const [isUser, setIsUser] = useState(false);
+const TestPage = () => {
+  const [num, setNum] = useState(0);
+  const [x, setX] = useState(1);
+
+  useEffect(() => {
+    setNum(100 * x);
+    console.log("rerendered");
+  }, [x]);
 
   return (
     <div>
-      {isUser ? (
-        <button
-          onClick={() => {
-            setIsUser(false);
-          }}
-        >
-          log in
-        </button>
-      ) : (
-        <button
-          onClick={() => {
-            setIsUser(true);
-          }}
-        >
-          register
-        </button>
-      )}
+      testpage {num}
+      <button
+        onClick={() => {
+          return setX(x + 1);
+        }}
+      >
+        Click Here
+      </button>
     </div>
   );
 };
-export default testpage;
+
+export default TestPage;
