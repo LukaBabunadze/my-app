@@ -5,8 +5,6 @@ import Link from "next/link";
 const PostCard = ({ post }) => {
   //   const {post, name, desc} = props;
 
-  console.log(post)
-
   return (
     <div className={styles.container}>
       <div className={styles.top}>
