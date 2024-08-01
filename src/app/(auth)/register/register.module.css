@@ -5,11 +5,17 @@
 
 .contentWrapper {
   display: flex;
+  flex-direction: column;
   background-color: var(--bgSoft);
   border-radius: 4px;
   width: 500px;
   padding: 50px;
   text-align: center;
+}
+
+.errorText {
+  color: var(--error);
+  margin-bottom: 20px;
 }
 
 .form {
