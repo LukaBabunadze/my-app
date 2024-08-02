@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import styles from "./loginForm.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LoginForm = () => {
+  const nameRef = useRef(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,9 +24,16 @@ const LoginForm = () => {
     return setPassword(event.target.value);
   };
 
+  useEffect(() => {
+    if (nameRef.current) {
+      nameRef.current.focus();
+    }
+  }, []);
+
   return (
     <form action="" className={styles.form}>
       <input
+        ref={nameRef}
         type="text"
         placeholder="username"
         name="username"

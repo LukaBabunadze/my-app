@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import styles from "./register.module.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Register = () => {
+  const inputRef = useRef(null);
+
   const [userData, setUserData] = useState({
     firstname: "",
     lastname: "",
@@ -50,12 +52,19 @@ const Register = () => {
       .then((res) => console.log(res));
   };
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         {error.length > 0 && <p className={styles.errorText}>{error}</p>}
         <form action="" className={styles.form}>
           <input
+            ref={inputRef}
             type="text"
             placeholder="firstname"
             onChange={(event) => {
