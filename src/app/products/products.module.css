@@ -7,11 +7,55 @@
   align-items: center;
   gap: 15px;
   padding: 20px 120px;
+  z-index: 1;
 }
 
 .productItem > button {
-    height: 70px;
-    width: 140px;
-    margin-top: 20px;
-    margin-left: 25px;
+  height: 70px;
+  width: 140px;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.modalContainer {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(7, 7, 7, 0.41);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContentWrapper {
+  height: 70vh;
+  background-color: var(--text);
+  flex: 1;
+  margin: 0px 100px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  align-items: center;
+}
+
+.inputWrapper > h5 {
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-size: 26px;
+  color: var(--bg);
+}
+
+.inputWrapper > input {
+  height: 40px;
+  width: 200px;
+  padding: 0px 10px;
+  outline: 2px solid var(--btn);
+  border-radius: 8px;
+  border-width: 0px;
 }
